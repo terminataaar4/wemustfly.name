@@ -1,5 +1,20 @@
 <div id="message">
-    <h1>{{title}}</h1>
-    <h2>coming soon...</h2>
-    <h3><a href="mailto:o@wemustfly.name">o@wemustfly.name</a></h3>
+    <md-toolbar color="primary">
+        <span>{{ (settings | async)?.title }}</span>
+    </md-toolbar>
+
+    <md-tab-group>
+        <md-tab *ngFor="let page of pages | async">
+            <template md-tab-label>{{ page.title }}</template>
+            <template md-tab-content>
+                <p>{{ page.content }}</p>
+            </template>
+        </md-tab>
+    </md-tab-group>
+
+    <md-toolbar color="accent">
+        <span>Mail me:</span>
+        <span class="example-fill-remaining-space"></span>
+        <span>{{ (settings | async)?.email }}</span>
+    </md-toolbar>
 </div>

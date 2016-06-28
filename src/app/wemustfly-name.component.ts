@@ -1,17 +1,33 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
+
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
+import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 
 @Component({
     moduleId: module.id,
     selector: 'wemustfly-name-app',
     templateUrl: 'wemustfly-name.component.html',
-    styleUrls: ['wemustfly-name.component.css']
+    styleUrls: ['wemustfly-name.component.css'],
+    directives: [
+        MD_CARD_DIRECTIVES,
+        MD_BUTTON_DIRECTIVES,
+        MD_TABS_DIRECTIVES,
+        MD_TOOLBAR_DIRECTIVES,
+    ]
 })
 export class WemustflyNameAppComponent {
-    title = 'Welcome to our site!';
+    settings: FirebaseObjectObservable<any[]>;
     pages: FirebaseListObservable<any[]>;
 
     constructor(af: AngularFire) {
-        this.pages = af.database.list('pages');
+        this.settings = af.database.object('settings');
+        this.pages = af.database.list('pages', {
+            query: {
+                orderByChild: 'position'
+            }
+        });
     }
 }
