@@ -14,9 +14,4 @@ describe('App: WemustflyName', () => {
       inject([WemustflyNameAppComponent], (app: WemustflyNameAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'Welcome to our site!\'',
-      inject([WemustflyNameAppComponent], (app: WemustflyNameAppComponent) => {
-    expect(app.title).toEqual('Welcome to our site!');
-  }));
 });
