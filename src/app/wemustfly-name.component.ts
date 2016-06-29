@@ -6,6 +6,8 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
 import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 
+import { Objects2ArraysPipe } from './shared/objects2arrays.pipe';
+
 @Component({
     moduleId: module.id,
     selector: 'wemustfly-name-app',
@@ -16,7 +18,8 @@ import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
         MD_BUTTON_DIRECTIVES,
         MD_TABS_DIRECTIVES,
         MD_TOOLBAR_DIRECTIVES,
-    ]
+    ],
+	pipes: [Objects2ArraysPipe]
 })
 export class WemustflyNameAppComponent {
     settings: FirebaseObjectObservable<any[]>;
