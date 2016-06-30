@@ -1,2 +1,2 @@
 export * from './environment';
-export * from './wemustfly-name.component';
+export * from './simple-site.component';

@@ -1,13 +1,13 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { WemustflyNameAppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
+import { SimpleSiteAppComponent, environment } from './app/';
 
 if (environment.production) {
 	enableProdMode();
 }
 
-bootstrap(WemustflyNameAppComponent, [
+bootstrap(SimpleSiteAppComponent, [
 	FIREBASE_PROVIDERS,
 	// Initialize Firebase app  
 	defaultFirebase({

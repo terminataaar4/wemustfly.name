@@ -1,14 +1,14 @@
-import { WemustflyNamePage } from './app.po';
+import { SimpleSitePage } from './app.po';
 
-describe('wemustfly-name App', function() {
-  let page: WemustflyNamePage;
+describe('simple-site App', function() {
+  let page: SimpleSitePage;
 
   beforeEach(() => {
-    page = new WemustflyNamePage();
+    page = new SimpleSitePage();
   });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('wemustfly-name works!');
+    expect(page.getParagraphText()).toEqual('simple-site works!');
   });
 });
