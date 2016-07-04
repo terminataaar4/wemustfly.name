@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Page } from './page';
 
-import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { CardComponent } from '../card/card.component';
 
 import { ObjectToArrayPipe } from '../object-to-array.pipe';
 
@@ -14,12 +14,12 @@ import { ObjectToArrayPipe } from '../object-to-array.pipe';
     styleUrls: ['page.component.css'],
     directives: [
         MD_CARD_DIRECTIVES,
-        MD_TABS_DIRECTIVES,
+        CardComponent,
     ],
     pipes: [ObjectToArrayPipe]
 })
 export class PageComponent implements OnInit {
-    @Input() page; //: Page;
+    @Input() page;
 
     ngOnInit() {
     }
