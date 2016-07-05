@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+
+import { SettingsService } from './shared/settings.service';
 
 import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 import { PagesComponent } from './pages/pages.component';
@@ -9,15 +10,13 @@ import { PagesComponent } from './pages/pages.component';
     selector: 'simple-site-app',
     templateUrl: 'simple-site.component.html',
     styleUrls: ['simple-site.component.css'],
+    providers: [SettingsService],
     directives: [
         MD_TOOLBAR_DIRECTIVES,
 		PagesComponent,
     ]
 })
 export class SimpleSiteAppComponent {
-    settings: FirebaseObjectObservable<any[]>;
-
-    constructor(af: AngularFire) {
-        this.settings = af.database.object('settings');
+    constructor(public settings: SettingsService) {
     }
 }

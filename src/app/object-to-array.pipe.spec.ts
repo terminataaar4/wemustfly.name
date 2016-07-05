@@ -5,12 +5,12 @@ import {
   inject,
   beforeEachProviders
 } from '@angular/core/testing';
-import { ObjectToArray } from './object-to-array.pipe';
+import { ObjectToArrayPipe } from './object-to-array.pipe';
 
-describe('ObjectToArray Pipe', () => {
-  beforeEachProviders(() => [ObjectToArray]);
+describe('ObjectToArrayPipe', () => {
+  beforeEachProviders(() => [ObjectToArrayPipe]);
 
-  it('should transform the input', inject([ObjectToArray], (pipe: ObjectToArray) => {
+  it('should transform the input', inject([ObjectToArrayPipe], (pipe: ObjectToArrayPipe) => {
       expect(pipe.transform(true)).toBe(null);
   }));
 });

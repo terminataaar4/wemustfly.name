@@ -1,5 +1,5 @@
 <md-tab-group>
-    <md-tab *ngFor="let page of pages | async">
+    <md-tab *ngFor="let page of pages.pages | async">
         <template md-tab-label>{{ page.title }}</template>
         <template md-tab-content>
             <app-page [page]="page"></app-page>

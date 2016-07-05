@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Page } from './page';
-
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { CardComponent } from '../card/card.component';
 

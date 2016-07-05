@@ -1,5 +1,5 @@
 <md-toolbar color="primary">
-    <span>{{ (settings | async)?.title }}</span>
+    <span>{{ (settings.settings | async)?.title }}</span>
 </md-toolbar>
 
 <app-pages></app-pages>
@@ -7,5 +7,5 @@
 <md-toolbar color="accent">
     <span>Mail me:</span>
     <span class="example-fill-remaining-space"></span>
-    <span>{{ (settings | async)?.email }}</span>
+    <span>{{ (settings.settings | async)?.email }}</span>
 </md-toolbar>
