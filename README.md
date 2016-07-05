@@ -1,3 +1,14 @@
+## Testing
+
+- Run local firebase-server:
+```
+$ node firebase-server-runner.js
+```
+- Add one line into /etc/hosts:
+```
+127.0.0.1    localhost.firebaseio.test
+```
+
 ## Troubleshooting
 
 - Error during building on prod (https://github.com/angular/material2/issues/541

@@ -1,2 +1,2 @@
-<md-card>{{ page.content }}</md-card>
+<md-card [innerHTML]="page.content"></md-card>
 <app-card *ngFor="let card of page.cards | objectToArray" [card]="card"></app-card>

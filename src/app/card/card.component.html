@@ -1,10 +1,8 @@
 <md-card>
     <md-card-header *ngIf="card.title">
-        <img *ngIf="card.avatar" md-card-avatar src="{{ card.avatar }}">
-        <md-card-title>{{ card.title }}</md-card-title>
+        <img *ngIf="card.avatar" md-card-avatar [src]="card.avatar">
+        <md-card-title [innerHTML]="card.title"></md-card-title>
     </md-card-header>
-    <img *ngIf="card.image" md-card-image src="{{ card.image }}">
-    <md-card-content>
-        <p>{{ card.content }}</p>
-    </md-card-content>
+    <img *ngIf="card.image" md-card-image [src]="card.image">
+    <md-card-content [innerHTML]="card.content"></md-card-content>
 </md-card>

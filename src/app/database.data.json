@@ -1,0 +1,26 @@
+{ 
+    "pages" : {
+        "page-1" : {
+            "cards" : {
+                "card-1" : {
+                    "avatar" : "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png",
+                    "content" : "Page 1 - Card 1 content",
+                    "image" : "http://www.w3schools.com/css/trolltunga.jpg",
+                    "title" : "Page 1 - Card 1 title"
+                }
+            },
+            "content" : "Page 1 content",
+            "position" : 1,
+            "title" : "Page 1 title"
+        },
+        "page-2" : {
+            "content" : "Page 2 content",
+            "position" : 2,
+            "title" : "Page 2 title"
+        }
+    },
+    "settings" : {
+        "email" : "o@wemustfly.name",
+        "title" : "We Must Fly!"
+    }
+}
