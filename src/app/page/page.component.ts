@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { CardComponent } from '../card/card.component';
 
-import { ObjectToArrayPipe } from '../object-to-array.pipe';
+import { ObjectToArrayPipe } from '../shared/object-to-array.pipe';
 
 @Component({
     moduleId: module.id,

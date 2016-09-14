@@ -6,7 +6,7 @@ import { SimpleSiteAppComponent, environment, firebaseConf } from './app/';
 if (environment.production) {
 	enableProdMode();
 } else {
-    firebaseConf.databaseURL = firebaseConf.devDatabaseURL;
+    //firebaseConf.databaseURL = firebaseConf.devDatabaseURL;
 }
 
 bootstrap(SimpleSiteAppComponent, [
