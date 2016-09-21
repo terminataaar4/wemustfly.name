@@ -1,16 +1,13 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import './polyfills.ts';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
-import { SimpleSiteAppComponent, environment, firebaseConf } from './app/';
+import { SimpleSiteAppModule } from './app/';
 
 if (environment.production) {
 	enableProdMode();
-} else {
-    //firebaseConf.databaseURL = firebaseConf.devDatabaseURL;
 }
 
-bootstrap(SimpleSiteAppComponent, [
-	FIREBASE_PROVIDERS,
-	// Initialize Firebase app  
-	defaultFirebase(firebaseConf)
-]);
+platformBrowserDynamic().bootstrapModule(SimpleSiteAppModule);
