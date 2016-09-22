@@ -1,14 +1,14 @@
-import { WemustflyNameNewPage } from './app.po';
+import { WemustflyNamePage } from './app.po';
 
-describe('wemustfly-name-new App', function() {
-  let page: WemustflyNameNewPage;
+describe('wemustfly-name App', function() {
+  let page: WemustflyNamePage;
 
   beforeEach(() => {
-    page = new WemustflyNameNewPage();
+    page = new WemustflyNamePage();
   });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toMatch('Loading...');
   });
 });

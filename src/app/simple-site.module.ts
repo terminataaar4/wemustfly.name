@@ -30,7 +30,7 @@ import { firebaseConf } from './firebase.conf';
         PageComponent,
         CardComponent,
         ObjectToArrayPipe,
-        SimpleSiteAppComponent
+        SimpleSiteAppComponent,
     ],
 	entryComponents: [
         SimpleSiteAppComponent

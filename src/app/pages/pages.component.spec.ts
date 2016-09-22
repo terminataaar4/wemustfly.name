@@ -1,44 +1,53 @@
-import {
-    beforeEach,
-    beforeEachProviders,
-    describe,
-    expect,
-    it,
-    inject,
-} from '@angular/core/testing';
-import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
-import { Component } from '@angular/core';
-import { By } from '@angular/platform-browser';
-import { PagesComponent } from './pages.component';
+/* tslint:disable:no-unused-variable */
+
+import { TestBed, async, inject } from '@angular/core/testing';
+
+import { AngularFireModule } from 'angularfire2';
+
+import { MdCardModule } from '@angular2-material/card/card';
+import { MdTabsModule } from '@angular2-material/tabs/tabs';
+import { PageComponent } from '../page/';
+import { CardComponent } from '../card/';
+import { ObjectToArrayPipe } from '../shared/object-to-array.pipe';
+
 import { PagesService } from '../shared/pages.service';
+import { PagesComponent } from './pages.component';
+import { firebaseConf } from '../firebase.conf';
 
-describe('Component: Pages', () => {
-    let builder: TestComponentBuilder;
+describe('Component: PagesComponent', () => {
+    let	fixture;
 
-    beforeEachProviders(() => [PagesComponent, PagesService]);
-    beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
-        builder = tcb;
-    }));
+    beforeEach(()	=>	{
+        TestBed.configureTestingModule({
+            imports: [
+                AngularFireModule.initializeApp(firebaseConf),
+                MdCardModule.forRoot(),
+                MdTabsModule.forRoot(),
+            ],
+            declarations:	[
+                PageComponent,
+                CardComponent,
+                ObjectToArrayPipe,
+                PagesComponent
+            ],
+            providers:	[
+                PagesService
+            ]
+        });
+        fixture	= TestBed.createComponent(PagesComponent);
+        fixture.detectChanges();
+    });
 
-    it('should inject the component', inject([PagesComponent], (component: PagesComponent) => {
-        expect(component).toBeTruthy();
-    }));
-
-    it('should create the component', inject([], () => {
-        return builder.createAsync(PagesComponentTestController)
-            .then((fixture: ComponentFixture<any>) => {
-                let query = fixture.debugElement.query(By.directive(PagesComponent));
-                expect(query).toBeTruthy();
-                expect(query.componentInstance).toBeTruthy();
-            });
-    }));
+    it('should create an instance',	async(inject([], () => {
+        expect(fixture.componentInstance).toBeTruthy();
+        fixture.whenStable()
+        .then(() => {
+            fixture.detectChanges();
+            return fixture.whenStable();
+        })
+        .then(() => {
+            const compiled = fixture.debugElement.nativeElement;
+            expect(compiled.querySelector('div').innerText).toEqual('Test quote');
+        });
+    })));
 });
-
-@Component({
-    selector: 'test',
-    template: `<app-pages></app-pages>`,
-    directives: [PagesComponent]
-})
-class PagesComponentTestController {
-}
-

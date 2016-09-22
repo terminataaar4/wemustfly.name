@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor/globals';
 
-export class WemustflyNameNewPage {
+export class WemustflyNamePage {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('simple-site-app div')).getText();
   }
 }
