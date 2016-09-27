@@ -1,14 +1,11 @@
-import {
-  describe,
-  ddescribe,
-  expect,
-  iit,
-  it
-} from '@angular/core/testing';
-import {Pages} from './pages.model';
+/* tslint:disable:no-unused-variable */
 
-describe('Pages', () => {
+import { TestBed } from '@angular/core/testing';
+import { Pages } from './pages.model';
+
+describe('Model: Pages', () => {
   it('should create an instance', () => {
-    expect(new Pages()).toBeTruthy();
+    let model = new Pages();
+    expect(model).toBeTruthy();
   });
 });
